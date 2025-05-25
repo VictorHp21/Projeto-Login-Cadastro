@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+
+
+   
+
+    <link rel="stylesheet" href="Estilos/style.css">
+    <link rel="stylesheet" href="Estilos/media-querry.css">
+
+    <script src="Codigos/script_Login.js" defer></script>
+</head>
+<body>
+    <main>
+        <section id="login">
+            <div id="imagem">
+               
+            </div>
+            <div id="formulario">
+                <h1>LOGIN</h1>
+                <p>Seja bem-vindo!!! <br> Faça login para acessar sua conta. </p>
+                <form onsubmit="login(event)">
+                    <div class="campo">
+                        <span class="material-symbols-outlined">
+                                person
+                            </span>
+                        <input type="text" name="login" id="ilogin" placeholder="Login" autocomplete="text" required maxlength="30">
+                        <label for="ilogin">Login</label>
+                    </div>
+                    <div class="campo">
+                        <span class="material-symbols-outlined">
+                            key
+                            </span>
+                        <input type="password" name="senha" id="isenha" placeholder="Senha" autocomplete="current-password" required minlength="4" maxlength="20">
+                        <label for="isenha">Senha</label>
+                    </div>
+                    <input type="submit" value="Entrar">
+                 
+                    <a href="esqueci.html" class="botao"> Esqueci minha senha</a>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+  
+</body>
+</html>
