@@ -71,9 +71,17 @@ body {
     margin: auto;
   }
 
+  .container#container-lista{
+    max-width: 425px;
+    width: 100%;
+    padding: auto;
+    margin: auto;
+  }
+
   button {
     max-width: 425px;
-    min-width: 425px;
+    width: 100%;
+    margin: auto;
     background-color: var(--cor0);
     color: #000;
     padding: 0.7rem 1.2rem;
@@ -128,6 +136,12 @@ body {
   }
 
   .form-group {
+    max-width: 400px;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  #form-lista{
     max-width: 450px;
     margin-bottom: 1rem;
   }
@@ -227,7 +241,7 @@ body {
   width: 0%;
   opacity: 0;
   color: var(--night-rider);
-  font-size: 1.2em;
+  font-size: 10px;
   font-weight: 600;
   transition-duration: .3s;
 }
@@ -260,5 +274,3 @@ body {
 
 
   
-
-
