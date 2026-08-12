@@ -2,6 +2,8 @@ package com.victor.login_cad.Entities;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "Usuarios")
 public class Usuarios {
@@ -13,6 +15,9 @@ public class Usuarios {
     private String nome;
     private String email;
     private String senha;
+
+    @OneToMany(mappedBy = "usuario")
+    private List<Funcionario> funcionarios;
 
     public Usuarios (){}
 
