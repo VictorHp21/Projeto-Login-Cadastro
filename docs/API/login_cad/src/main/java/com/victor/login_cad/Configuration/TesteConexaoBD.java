@@ -1,0 +1,25 @@
+package com.victor.login_cad.Configuration;
+
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import javax.sql.DataSource;
+import java.sql.Connection;
+
+@Configuration
+public class TesteConexaoBD {
+
+    @Bean
+    CommandLineRunner teste(DataSource dataSource){
+        return args -> {
+            try (Connection conn = dataSource.getConnection()) {
+                System.out.println("Conectado ao banco com sucesso!!! ✅");
+                System.out.println("Banco: " + conn.getCatalog());
+            } catch (Exception e){
+                System.out.println("❌ Erro ao se conectar com o banco!");
+                e.printStackTrace();
+            }
+        };
+    }
+}
