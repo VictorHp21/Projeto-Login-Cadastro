@@ -89,3 +89,76 @@ document.getElementById("signin").addEventListener("submit", async function (e) 
 
 
 })
+
+
+// cadastro
+
+document.getElementById("signup").addEventListener("submit", async function (e){
+
+  e.preventDefault()
+
+  const nome = document.getElementById("cad-nome").value
+  const email = document.getElementById("cad-mail").value
+  const senha = document.getElementById("cad-senha").value
+
+  if(!nome || !email || !senha) {
+    alert("Preencha todos os campos")
+    return
+  }
+
+  if(!email.includes("@")){
+    alert("Digite um email válido")
+    return
+  }
+
+  const usuario = {
+    nome: nome,
+    email: email,
+    senha: senha
+  };
+
+  try {
+
+    const respostaCadastro = await fetch("http://localhost:8080/user/cadastro", {
+      method : "POST",
+
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+      body: JSON.stringify(usuario)
+
+    })
+
+     const resultadoCadastro = await respostaCadastro.text();
+
+
+
+    if (respostaCadastro.ok) {
+
+      const usuarioCadastrado = JSON.parse(resultadoCadastro);
+
+      localStorage.setItem(
+        "usuario",
+        JSON.stringify(usuarioCadastrado)
+      );
+
+      document.getElementById("signup").reset();
+
+      window.location.href = "Pagina_Cadastro.html";
+
+    } else {
+
+      alert(resultadoCadastro);
+
+    }
+
+    
+  } catch (erro) {
+    console.error("Erro na requisição", erro);
+
+    alert("Não foi possível conectar ao servidor")
+  }
+
+  
+})

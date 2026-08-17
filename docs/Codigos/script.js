@@ -1,3 +1,20 @@
+
+
+verificarLogin();
+
+function verificarLogin() {
+
+            const usuario = localStorage.getItem("usuario");
+
+            if (!usuario) {
+                window.location.href = "index.html";
+                return;
+            }
+
+            return JSON.parse(usuario);
+        }
+
+
 // Script para abrir apenas o formulário clicado 
 
     function mostrarFormulario(id) {
