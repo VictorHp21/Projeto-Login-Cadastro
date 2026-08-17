@@ -69,8 +69,30 @@ public class FuncionarioService {
         return  funcionarioRepository.save(funcionario);
     }
 
+    // falta os métodos de editar e excluir funcionário
+
     public Funcionario editarFuncionario(Long id, FuncionarioDTO dto){
-        
+
+        Funcionario funcExiste = buscarFuncionario(id);
+
+        funcExiste.setNome(dto.getNome());
+        funcExiste.setIdade(dto.getIdade());
+        funcExiste.setDepartamento(dto.getDepartamento());
+
+        return funcionarioRepository.save(funcExiste);
+
+    }
+
+    public boolean excluirFuncionario(Long id){
+        if (funcionarioRepository.existsById(id)){
+            Funcionario funcionario = buscarFuncionario(id);
+
+            funcionarioRepository.delete(funcionario);
+
+            return true;
+        }
+
+        return false;
     }
 
 }

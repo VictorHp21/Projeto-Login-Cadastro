@@ -57,16 +57,18 @@
         </div>
         <div class="card-form">
             <div class="forms">
+
+
                 <form id="signin" class="active">
                     <p>Não tem uma conta? <a>Cadastrar</a>.</p>
                     <label> Email </label>
                     <div class="control">
-                        <input type="text" autocomplete="off" placeholder="seuemail@gmail.com" />
+                        <input type="text" id="login-mail" autocomplete="off" placeholder="seuemail@gmail.com" />
                         <i class="ai-envelope"></i>
                     </div>
                     <label> Senha </label>
                     <div class="control">
-                        <input type="password" placeholder="●●●●●●●●●●●●●●●" />
+                        <input type="password" id="login-senha" placeholder="●●●●●●●●●●●●●●●" />
                         <i class="ai-lock-on"></i>
                     </div>
                     <p class="footer">
@@ -74,6 +76,8 @@
                     </p>
                     <button>Entrar</button>
                 </form>
+
+
                 <form id="signup">
                     <p>Já tem uma conta? <a>Entrar</a>.</p>
                     <label> Nome </label>
